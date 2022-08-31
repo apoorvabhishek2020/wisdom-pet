@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Added by Apoorv
+django_env
+wisdom_pet_project/db.sqlite3
+
