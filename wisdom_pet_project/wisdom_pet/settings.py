@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,10 +78,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'wisdompet',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'USER': os.environ['USER_NAME'],
+        'PASSWORD': os.environ['USER_PWD'],
+        'HOST': os.environ['HOST'],
+        'PORT': os.environ['PORT']
+        # 'USER': 'admin',
+        # 'PASSWORD': 'admin',
+        # 'HOST': 'postgres',
+        # 'PORT': "5432"
     }
 }
 

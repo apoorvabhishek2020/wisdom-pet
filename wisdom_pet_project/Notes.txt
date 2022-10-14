@@ -1,0 +1,16 @@
+Adding env variable -
+https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
+https://geektechstuff.com/2021/10/12/docker-environment-variables-env-file-a-little-django-python/
+Running as container -
+https://medium.com/shot-code/running-django-postgresql-containers-and-persisting-data-with-docker-4dd8e4dd5361
+Image Back OFF -
+https://www.tutorialworks.com/kubernetes-imagepullbackoff/
+https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
+
+Setting Env Variable using PowerShell
+$Env:USER_NAME = 'admin'
+$Env:USER_PWD = 'admin'
+$Env:HOST = 'localhost'
+$Env:PORT = 5432
+Checking Env Variable in PowerShell
+echo $Env:USER_NAME

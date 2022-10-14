@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   postgres:
-    container_name: postgres_container
+    container_name: postgres
     image: postgres
     environment:
       POSTGRES_USER: admin
@@ -12,6 +12,19 @@ services:
        - postgres:/data/postgres
     ports:
       - "5432:5432"
+    restart: unless-stopped
+
+  django:
+    image: wisdom-pet:1.0
+    environment:
+      USER_NAME: admin
+      USER_PWD: admin
+      HOST: postgres
+      PORT: 5432
+    ports:
+      - "8000:8000"
+    depends_on: 
+      - postgres
     restart: unless-stopped
 
 volumes:
