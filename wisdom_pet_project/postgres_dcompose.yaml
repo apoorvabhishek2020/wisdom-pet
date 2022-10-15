@@ -7,15 +7,18 @@ services:
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
+      POSTGRES_DB: wisdompet
       PGDATA: /data/postgres
     volumes:
        - postgres:/data/postgres
     ports:
       - "5432:5432"
     restart: unless-stopped
+    healthcheck:
+      test: pg_isready -U postgres
 
   django:
-    image: wisdom-pet:1.0
+    image: apoorvabhishek/wisdom-pet:1.0
     environment:
       USER_NAME: admin
       USER_PWD: admin
@@ -24,7 +27,8 @@ services:
     ports:
       - "8000:8000"
     depends_on: 
-      - postgres
+      postgres:
+        condition: service_healthy
     restart: unless-stopped
 
 volumes:

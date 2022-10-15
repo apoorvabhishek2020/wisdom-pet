@@ -1,6 +1,4 @@
 .venv/
 db.sqlite3
 Notes.txt
-pet_data.csv
 postgres_dcompose.yaml
-adoptions/management/
